@@ -2,6 +2,18 @@
 
 用图形界面在本地运行 InDeConv、InDeStars 和 InDeNoise。支持 RGB TIFF 和 PNG 原图预览，星点锐化、星晕调节、去星、无星层降噪及重新合成。可分别调整亮度和色彩降噪。
 
+## 与 PixInsight 的 RC Astro 三件套对照
+
+本桌面版通过 InDe-Suite 实现 RC Astro 三件套常用的三类功能。
+
+| 功能 | 本程序使用的 InDe 模型 | RC Astro 对应插件 |
+| --- | --- | --- |
+| 反卷积、星点锐化和星晕调节 | InDeConv | [BlurXTerminator](https://www.rc-astro.com/blurxterminator-ml5/) |
+| 去星并输出独立星点层 | InDeStars | [StarXTerminator](https://www.rc-astro.com/software/sxt/) |
+| 降噪，支持亮度与色彩分别调整 | InDeNoise | [NoiseXTerminator](https://www.rc-astro.com/noisexterminator-2-ai3-user-manual-pixinsight/) |
+
+本程序的模型及推理由 InDe-Suite 提供。参数数值与处理结果以各自实现为准。
+
 ## 下载和使用
 
 1. 从 [GitHub Releases](https://github.com/1650077398-sketch/InDe-Desktop/releases/latest) 下载 `InDe-Desktop-v1.0.0-win-x64.zip`，完整解压。
