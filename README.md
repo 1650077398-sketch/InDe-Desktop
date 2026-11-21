@@ -2,6 +2,10 @@
 
 用图形界面在本地运行 InDeConv、InDeStars 和 InDeNoise。支持 RGB TIFF 和 PNG 原图预览，星点锐化、星晕调节、去星、无星层降噪及重新合成。可分别调整亮度和色彩降噪。
 
+## 项目缘由
+
+本项目起源于在本机安装 InDe-Suite 时遇到 PixInsight 无法正常载入模块的情况。如果你也遇到类似问题，可以通过这个 Windows 桌面程序直接调用原项目的 InDe 后端，继续完成反卷积、去星和降噪，无需在 PixInsight 中载入模块。
+
 ## 与 PixInsight 的 RC Astro 三件套对照
 
 本桌面版通过 InDe-Suite 实现 RC Astro 三件套常用的三类功能。
