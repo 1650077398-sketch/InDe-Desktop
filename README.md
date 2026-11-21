@@ -6,6 +6,15 @@
 
 本项目起源于在本机安装 InDe-Suite 时遇到 PixInsight 无法正常载入模块的情况。如果你也遇到类似问题，可以通过这个 Windows 桌面程序直接调用原项目的 InDe 后端，继续完成反卷积、去星和降噪，无需在 PixInsight 中载入模块。
 
+### 实时预览 API 兼容问题
+
+本地尝试为 PixInsight 的 API 186 环境重编译原生模块时，构建日志记录了两处接口差异。
+
+- 原模块的实时预览回调使用 `Image`，本机 PCL 的 `RequiresRealTimePreviewUpdate` 和 `GenerateRealTimePreview` 接收的是 `UInt16Image`。函数签名对不上，编译器报 `C3668`。
+- 原模块请求的 `InterfaceFeature::RealTimeF32Images` 在本机 PCL 头文件中没有定义，编译器报 `C2039`。
+
+按本机 PCL 接口调整实时预览代码后，兼容构建生成了 `InDe-pxm.dll`。这一步验证了编译通过。桌面版则直接运行原项目的 InDe 后端，图像预览和处理都在独立窗口内完成，无需依赖 PixInsight 的实时预览回调。
+
 ## 与 PixInsight 的 RC Astro 三件套对照
 
 本桌面版通过 InDe-Suite 实现 RC Astro 三件套常用的三类功能。
